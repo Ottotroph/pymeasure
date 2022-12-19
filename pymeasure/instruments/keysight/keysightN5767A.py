@@ -99,11 +99,3 @@ class KeysightN5767A(Instrument):
         super().__init__(
             adapter, "Keysight N5767A power supply", **kwargs
         )
-        # Set up data transfer format
-        if isinstance(self.adapter, VISAAdapter):
-            self.adapter.config(
-                is_binary=False,
-                datatype='float32',
-                converter='f',
-                separator=','
-            )
